@@ -1,0 +1,42 @@
+{
+  "name": "no-tab",
+  "version": "1.0.0",
+  "description": "Prevent ios tabbing between inputs in React forms.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "react": "^0.14.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.26",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "eslint-plugin-react": "^3.16.1"
+  },
+  "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericf89/no-tab.git"
+  },
+  "keywords": [
+    "react",
+    "ios",
+    "forms",
+    "tab",
+    "disable",
+    "mobile",
+    "safari"
+  ],
+  "author": "Eric Fennell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericf89/no-tab/issues"
+  },
+  "homepage": "https://github.com/ericf89/no-tab#readme"
+}
