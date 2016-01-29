@@ -22,11 +22,11 @@ export function setupFormInput(Component) {
         constructor(props) {
             super(props);
         }
-
         wrapHandler = (formId, contextFunc, propsFunc) => (e) => contextFunc(formId, propsFunc, e);
         render = () => {
             const { props, context } = this;
             const { onBlur, onFocus, disabled, formId, ...other } = props;
+            if (!context.onBlur || !context.disabled || !context.onFocus) return (<Component {...props}/>);
             return (<Component
               onBlur={ this.wrapHandler(formId, context.onBlur, onBlur) }
               onFocus={ this.wrapHandler(formId, context.onFocus, onFocus) }
