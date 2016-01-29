@@ -1,6 +1,6 @@
 {
   "name": "no-tab",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Prevent ios tabbing between inputs in React forms.",
   "main": "lib/index.js",
   "dependencies": {

@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
 export const contextTypes = {
-    disabled: PropTypes.func.isRequired,
-    onFocus: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
+    disabled: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
 };
 
 export function setupFormInput(Component) {
@@ -14,7 +14,7 @@ export function setupFormInput(Component) {
             onBlur: PropTypes.func,
             onFocus: PropTypes.func,
             disabled: PropTypes.bool,
-            formId: PropTypes.string.isRequired,
+            formId: PropTypes.string,
         };
 
         static contextTypes = contextTypes;
