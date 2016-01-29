@@ -3,6 +3,6 @@
     "extends":"airbnb",
     "rules":{
         "indent":[2, 4],
-        "max-len": [2, 120, 4]
+        "max-len": [2, 150, 4]
     }
 }

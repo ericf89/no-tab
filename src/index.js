@@ -1,2 +1,7 @@
-export * from './form-mixin';
-export * from './input-mixin';
+import setupViewContainer from './view-container';
+import * as formInput from './form-input';
+
+export {
+    setupViewContainer,
+    formInput,
+};

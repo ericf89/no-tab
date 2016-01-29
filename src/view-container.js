@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
-
+function noop() {}
 
 export default function setupViewContainer(Component) {
     class ViewContainer extends React.Component {
+        static displayName = `NoTabView - ${Component.displayName}`;
+
         static childContextTypes = {
-            isDisabled: PropTypes.func.isRequired,
+            disabled: PropTypes.func.isRequired,
             onFocus: PropTypes.func.isRequired,
             onBlur: PropTypes.func.isRequired,
         };
@@ -17,10 +19,12 @@ export default function setupViewContainer(Component) {
         getChildContext = () =>
             ({
                 disabled: formId => this.state.focusedForm ? formId !== this.state.focusedForm : false,
-                onBlur: cb => this.setState({ focusedForm: null }, cb),
-                onFocus: (formId, cb) => this.setState({ focusedForm: formId }, cb),
+                onBlur: (formId, cb = noop, e) => this.setState({ focusedForm: null }, cb.bind(this, e)),
+                onFocus: (formId, cb = noop, e) => this.setState({ focusedForm: formId }, cb.bind(this, e)),
             });
+
         render = () => <Component {...this.props} {...this.state} />;
     }
+
     return ViewContainer;
 }
