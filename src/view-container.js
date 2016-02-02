@@ -19,8 +19,8 @@ export default function setupViewContainer(Component) {
         getChildContext = () =>
             ({
                 disabled: formId => this.state.focusedForm ? formId !== this.state.focusedForm : false,
-                onBlur: (formId, cb = noop, e) => this.setState({ focusedForm: null }, cb.bind(this, e)),
-                onFocus: (formId, cb = noop, e) => this.setState({ focusedForm: formId }, cb.bind(this, e)),
+                onBlur: (formId, cb = noop, e) => this.setState({ focusedForm: null }, () => cb(e)),
+                onFocus: (formId, cb = noop, e) => this.setState({ focusedForm: formId }, () => cb(e)),
             });
 
         render = () => <Component {...this.props} {...this.state} />;
