@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { setupViewContainer, formInput } from 'no-tab';
-const { setupFormInput } = formInput;
+import { setupViewContainer, setupFormInput } from 'no-tab';
 
 const Input = setupFormInput(props => <input {...props}/>);
 
