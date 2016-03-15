@@ -6,7 +6,7 @@ export const contextTypes = {
     onBlur: PropTypes.func,
 };
 
-export function setupFormInput(Component) {
+export default function setupFormInput(Component) {
     class FormInput extends React.Component {
         static displayName = `NoTabInput - ${Component.displayName}`;
 
