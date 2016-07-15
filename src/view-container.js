@@ -18,7 +18,7 @@ export default function setupViewContainer(Component) {
 
         getChildContext = () =>
             ({
-                disabled: formId => this.state.focusedForm ? formId !== this.state.focusedForm : false,
+                disabled: formId => (this.state.focusedForm ? formId !== this.state.focusedForm : false),
                 onBlur: (formId, cb = noop, e) => this.setState({ focusedForm: null }, () => cb(e)),
                 onFocus: (formId, cb = noop, e) => this.setState({ focusedForm: formId }, () => cb(e)),
             });
