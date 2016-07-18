@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import shallowCompare from 'react-addons-shallow-compare';
+
 export const contextTypes = {
     disabled: PropTypes.func,
     onFocus: PropTypes.func,
@@ -18,11 +18,6 @@ export default function setupFormInput(Component) {
         };
 
         static contextTypes = contextTypes;
-
-        shouldComponentUpdate = (nextProps, nextState, nextContext) =>
-            shallowCompare(this, nextProps, nextState) &&
-            this.props.formId !== undefined &&
-            nextContext.disabled(nextProps.formId) !== this.disabled;
 
         wrapHandler = (formId, contextFunc, propsFunc) => (e) => contextFunc(formId, propsFunc, e);
         render = () => {

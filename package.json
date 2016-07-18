@@ -4,8 +4,7 @@
   "description": "Prevent ios tabbing between inputs in React forms.",
   "main": "lib/index.js",
   "dependencies": {
-    "react": "15.*.*",
-    "react-addons-shallow-compare": "15.*.*"
+    "react": "15.*.*"
   },
   "devDependencies": {
     "babel-cli": "^6.3.26",
